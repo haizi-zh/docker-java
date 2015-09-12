@@ -43,4 +43,6 @@ RUN mkdir /opt && curl -jksSLH "Cookie: oraclelicense=accept-securebackup-cookie
 ENV JAVA_HOME /opt/jdk
 ENV PATH ${PATH}:${JAVA_HOME}/bin
 
+RUN echo -ne "- with `java -version 2>&1 | awk 'NR == 2'`\n" >> /root/.built
+
 WORKDIR /root
